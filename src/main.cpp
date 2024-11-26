@@ -1,5 +1,4 @@
 #include "freertos/FreeRTOS.h"
-#include "freertos/event_groups.h"
 #include "esp_wifi.h"
 #include "esp_log.h"
 #include "esp_system.h"
@@ -11,7 +10,7 @@
 #define WIFI_PASSWORD *CFG_PASSWORD
 #define WIFI_CHECK_TAG "WIFI_CHECK"
 
-static const char *TAG = "wifi_station";
+static const char *TAG = "WIFI_STATION";
 
 /*
  * Initializes wifi in station mode & connects
