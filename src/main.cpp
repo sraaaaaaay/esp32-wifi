@@ -6,10 +6,7 @@
 #include <string.h>
 #include <config.h>
 
-
-#define WIFI_CHECK_TAG "WIFI_CHECK"
-
-static const char *TAG = "WIFI_STATION";
+#define WIFI_STA_TAG "WIFI_STATION"
 
 int add (int x, int y);
 void wifi_init_sta();
@@ -21,9 +18,6 @@ void check_wifi_status();
  */
 extern "C" void app_main()
 {
-    int res = add(3, 4);
-
-
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)
     {
@@ -32,14 +26,15 @@ extern "C" void app_main()
     }
     ESP_ERROR_CHECK(ret);
 
-    
+    // Connect to wifi in station mode
     // wifi_init_sta();
-    ESP_LOGI(TAG, "Started wifi...");
+
+    ESP_LOGI(WIFI_STA_TAG, "Started wifi...");
 
     while (true)
     {
         // check_wifi_status();
-        ESP_LOGI(TAG, "ESP32 waiting...");
+        ESP_LOGI(WIFI_STA_TAG, "ESP32 waiting...");
         vTaskDelay(5000 / portTICK_PERIOD_MS);
     } 
 }

@@ -6,10 +6,12 @@
 #define WIFI_PASSWORD *CFG_PASSWORD
 #define WIFI_CHECK_TAG "WIFI_CHECK"
 
+/*
+ * Dummy function to offer non-networked functions for declaration testing
+ */
 int add(int x, int y){
     return x+y;
 }
-
 /*
  * Initializes wifi in station mode & connects
  */
